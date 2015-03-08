@@ -23,7 +23,7 @@ class Stu {
 			name[dou[0]] = '\0';
 			// age
 			char cage[3];
-			strncpy(cage, info + dou[0], dou[1] - dou[0] - 1);
+			strncpy(cage, info + dou[0] + 1, dou[1] - dou[0] - 1);
 			age = atoi(cage);
 			// id
 			strncpy(id, info + dou[1], dou[2] - dou[1] - 1);
