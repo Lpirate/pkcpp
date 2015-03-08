@@ -9,7 +9,34 @@ class Stu {
 	public:
 		// add student
 		void add() {
-			cin >> name >> age >> id >> score[0] >> score[1] >> score[2] >> score[3];
+			char info[100];
+			cin >> info;
+			int dou[6];
+			int i, j = 0;
+			// find ','
+			for(i = 0; i < 100; i++) {
+				if(info[i] == ',')
+					dou[j++] = i;
+			}
+			// name
+			strncpy(name, info, dou[0]);	
+			name[dou[0]] = '\0';
+			// age
+			char cage[3];
+			strncpy(cage, info + dou[0], dou[1] - dou[0] - 1);
+			age = atoi(cage);
+			// id
+			strncpy(id, info + dou[1], dou[2] - dou[1] - 1);
+			// score
+			char cscore[10];
+			strncpy(cscore, info + dou[2], dou[3] - dou[2] - 1);
+			score[0] = atoi(cscore);
+			strncpy(cscore, info + dou[3], dou[4] - dou[3] - 1);
+			score[1] = atoi(cscore);
+			strncpy(cscore, info + dou[4], dou[5] - dou[4] - 1);
+			score[2] = atoi(cscore);
+			strncpy(cscore, info + dou[5], strlen(info) - dou[5] - 1);
+			score[3] = atoi(cscore);
 		}
 
 		// calculate the score
