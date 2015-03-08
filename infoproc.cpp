@@ -26,7 +26,8 @@ class Stu {
 			strncpy(cage, info + dou[0] + 1, dou[1] - dou[0] - 1);
 			age = atoi(cage);
 			// id
-			strncpy(id, info + dou[1], dou[2] - dou[1] - 1);
+			strncpy(id, info + dou[1] + 1, dou[2] - dou[1] - 1);
+			id[dou[2] - dou[1]] = '\0';
 			// score
 			char cscore[10];
 			strncpy(cscore, info + dou[2], dou[3] - dou[2] - 1);
