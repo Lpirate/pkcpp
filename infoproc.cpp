@@ -30,13 +30,13 @@ class Stu {
 			id[dou[2] - dou[1]] = '\0';
 			// score
 			char cscore[10];
-			strncpy(cscore, info + dou[2], dou[3] - dou[2] - 1);
+			strncpy(cscore, info + dou[2] + 1, dou[3] - dou[2] - 1);
 			score[0] = atoi(cscore);
-			strncpy(cscore, info + dou[3], dou[4] - dou[3] - 1);
+			strncpy(cscore, info + dou[3] + 1, dou[4] - dou[3] - 1);
 			score[1] = atoi(cscore);
-			strncpy(cscore, info + dou[4], dou[5] - dou[4] - 1);
+			strncpy(cscore, info + dou[4] + 1, dou[5] - dou[4] - 1);
 			score[2] = atoi(cscore);
-			strncpy(cscore, info + dou[5], strlen(info) - dou[5] - 1);
+			strncpy(cscore, info + dou[5] + 1, strlen(info) - dou[5] - 1);
 			score[3] = atoi(cscore);
 		}
 
